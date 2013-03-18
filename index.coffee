@@ -35,7 +35,7 @@ createSprites = (options = {}, cb = ->) ->
     .parFilter (dir) ->
       fs.stat "#{path}/#{dir}", (err, stat) =>
         @ err, stat.isDirectory()
-    .parMap (dir) ->
+    .seqMap (dir) ->
       createSprite dir, options, @
     .unflatten()
     .seq (sprites) ->
