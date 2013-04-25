@@ -149,7 +149,7 @@ class Sprite extends EventEmitter
     try
       info = fs.readFileSync @jsonUrl(), "UTF-8"
     catch error
-      console.log @jsonUrl() + " not found"
+      console.log "generating #{@jsonUrl()}"
       return # no json file
 
     info = JSON.parse info
